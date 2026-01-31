@@ -1,0 +1,172 @@
+{%load static%}
+
+<html>
+	<head>
+		<title>Hasslestudent</title>
+		<style>
+			body{
+				background-image:url("{%static 'bg.png'%}");
+				background-size: cover;
+			}
+			#header{
+				height: 100px;
+				border: 1px solid black;
+				display: flex;
+				background: rgba(255,255,255,0.5);
+			}
+			#logo{
+				height: 100px;
+				border: 1px solid black;
+				width: 10%;
+			}
+			img{
+				clip-path: circle(50%);
+			}
+			#heading{
+				height: 100px;
+				border: 1px solid black;
+				width: 40%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			#navi{
+				height: 100px;
+				border: 1px solid black;
+				width: 50%;
+				display: flex;
+				align-items: center;
+			}
+			#links{
+				height: 30px;
+				border: 1px solid white;
+				width: 100%;
+				border-radius: 15px;
+			}
+			ul{
+				margin: 5px 0px;
+			}
+			ul li{
+				display: inline-block;
+				padding: 0px 20px;
+			}
+			ul li:hover{
+				background: rgba(255,255,255,0.5);
+				border: 1px solid black;
+				border-radius: 15px;
+			}
+			a{
+				text-decoration: none;
+				color: black;
+			}
+			#body{
+				height: 500px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			#body1{
+				height: 500px;
+				width: 80%;
+				background: rgba(255,255,255,0.5);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 10px;
+			}
+			#box{
+				background: rgba(0,0,0,0.5);
+				height: 300px;
+				width: 300px;
+				display: flex;
+				flex-direction: column;
+				color: white;
+				align-items: center;
+				justify-content: center;
+			}
+			input{
+				height: 30px;
+				width: 170px;
+				border-radius: 20px;
+			}
+			td, th, tr{
+				color: white;
+			}
+			#footer{
+				height: 100px;
+				background: rgba(255,255,255,0.5);
+				display: flex;
+			}
+			#social{
+				height: 100px;
+				width: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+			}
+			#address{
+				height: 100px;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div id="logo">
+				<img src="{% static 'college-logo.jpg' %}" height="100" width="100">
+			</div>
+			<div id="heading">
+				<h1>Hassle College</h1>
+			</div>
+			<div id="navi">
+				<div id="links">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="HS">Student</a></li>
+						<li><a href="HSR">Register</a></li>
+						<li><a href="A">Administration</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="body">
+			<div id="body1">
+				<div id="box">
+					<div>
+						<a href="HS"><button id="btn1">Sign In</button></a>
+						<a href="HSR"><button id="btn2">Sign Up</button></a>
+					</div>
+					<h2>Login</h2>
+					<h3 style="color:purple;">{{data}}</h3>
+					<form action="HSRLA" method="POST">
+					{% csrf_token %}
+					<table>
+						<tr>
+							<th>Username</th>
+							<td><input type="text" name="username" placeholder="Enter your username"></td>
+						</tr>
+						<tr>
+							<th>Password</th>
+							<td><input type="password" name="password" placeholder="Enter your Password"></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="submit" value="Login"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="social">
+				<a href="#">Facebook</a>
+				<a href="#">Instagram</a>
+				<a href="#">LinkedIn</a>
+				<a href="#">Twitter</a>
+				<a href="#">YouTube</a>
+			</div>
+			<div id="address">
+				Address: Hassle College, Main Street, City, Country
+			</div>
+		</div>
+	</body>
+</html>
