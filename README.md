@@ -128,3 +128,7 @@ Cloud deployment for scalability
 Advanced analytics for admission insights
 
 Integration with national academic databases
+
+## 📘 Documentation
+[View Project Documentation](Hassle-Free_College_Admission_Portal_DOCUMENTS.pdf)
+
